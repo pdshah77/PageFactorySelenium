@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.AboutPage;
 import com.crm.qa.pages.FrontPage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.pages.SignUpPage;
@@ -14,7 +15,7 @@ public class FrontPageTest extends TestBase {
 	FrontPage frontPage;
 	LoginPage loginPage;
 	SignUpPage signupPage;
-	
+	AboutPage aboutPage;
 	public FrontPageTest() {
 		super();
 	}
@@ -57,6 +58,21 @@ public class FrontPageTest extends TestBase {
 	@Test(priority=6)
 	public void signUpRedirectTest() {
 		signupPage = frontPage.signUpRedirect();
+	}
+	
+	@Test(priority=7)
+	public void sideSignUpRedirectTest() {
+		signupPage = frontPage.sideSignUpRedirect();
+	}
+	
+	@Test(priority=8)
+	public void aboutRedirectTest() {
+		aboutPage = frontPage.aboutRedirect();
+	}
+	
+	@Test(priority=9)
+	public void pricingRedirectTest() {
+		signupPage = frontPage.sideSignUpRedirect();
 	}
 	
 	@AfterMethod

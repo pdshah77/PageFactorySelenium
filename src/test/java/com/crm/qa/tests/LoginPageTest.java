@@ -9,6 +9,7 @@ import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.ClassicCRMPage;
 import com.crm.qa.pages.ForgotPassPage;
 import com.crm.qa.pages.FrontPage;
+import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 
 public class LoginPageTest extends TestBase {
@@ -16,6 +17,7 @@ public class LoginPageTest extends TestBase {
 	FrontPage frontPage;
 	ForgotPassPage forgetPassPage;
 	ClassicCRMPage classicrmPage;
+	HomePage homePage;
 	
 	public LoginPageTest() {
 		super();
@@ -53,6 +55,11 @@ public class LoginPageTest extends TestBase {
 	@Test(priority=5)
 	public void testForgetPassword() {
 		forgetPassPage = loginPage.forgotPassEnabled();
+	}
+	
+	@Test(priority=6)
+	public void testvalidLoginCredential() {
+		homePage = loginPage.login(prop.getProperty("email"),prop.getProperty("password"));
 	}
 	
 	@AfterMethod
