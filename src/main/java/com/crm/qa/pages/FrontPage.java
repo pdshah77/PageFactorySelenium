@@ -17,6 +17,15 @@ public class FrontPage extends TestBase{
 	@FindBy(xpath="//div[@class='rd-navbar-brand']//a[@title='free crm home']//span[@class='brand-slogan']")
 	WebElement logoTagLine;
 	
+	@FindBy(xpath="//a[contains(text(),'Sign Up')]")
+	WebElement sidesignUpBtn;
+	
+	@FindBy(linkText = "About")
+	WebElement aboutBtn;
+	
+	@FindBy(linkText = "Pricing")
+	WebElement pricingBtn;
+	
 	// Initializing the Page Objects
 	public FrontPage() {
 		PageFactory.initElements(driver, this);
@@ -47,6 +56,21 @@ public class FrontPage extends TestBase{
 	public SignUpPage signUpRedirect() {
 		signUpBtn.click();
 		return new SignUpPage();
+	}
+	
+	public SignUpPage sideSignUpRedirect() {
+		sidesignUpBtn.click();
+		return new SignUpPage();
+	}
+	
+	public AboutPage aboutRedirect() {
+		aboutBtn.click();
+		return new AboutPage();
+	}
+	
+	public PricingPage pricingRedirect() {
+			aboutBtn.click();
+		return new PricingPage();
 	}
 }
 
