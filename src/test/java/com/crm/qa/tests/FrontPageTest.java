@@ -34,43 +34,49 @@ public class FrontPageTest extends TestBase {
 	
 	@Test(priority=2)
 	public void tagLineTest() {
-		boolean tag = frontPage.validateTagLine();
+		boolean tag = frontPage.validateTagLineDisplay();
 		Assert.assertTrue(tag);
 	}
 	
 	@Test(priority=3)
+	public void tagLineDetailTest() {
+		String tag = frontPage.validateTagLine();
+		Assert.assertEquals(tag,"YOUR BUSINESS CLOUD PARTNER","Tag Line Mismatch");
+	}
+	
+	@Test(priority=4)
 	public void loginButtonDispplayedTest() {
 		boolean loginTag = frontPage.validateLoginButton();
 		Assert.assertTrue(loginTag);
 	}
 	
-	@Test(priority=4)
+	@Test(priority=5)
 	public void signUpButtonDisplayedTest() {
 		boolean signupTag = frontPage.validateSignUpButton();
 		Assert.assertTrue(signupTag);
 	}
 	
-	@Test(priority=5)
+	@Test(priority=6)
 	public void loginRedirectTest() {
 		loginPage = frontPage.loginRedirect();
 	}
 	
-	@Test(priority=6)
+	@Test(priority=7)
 	public void signUpRedirectTest() {
 		signupPage = frontPage.signUpRedirect();
 	}
 	
-	@Test(priority=7)
+	@Test(priority=8)
 	public void sideSignUpRedirectTest() {
 		signupPage = frontPage.sideSignUpRedirect();
 	}
 	
-	@Test(priority=8)
+	@Test(priority=9)
 	public void aboutRedirectTest() {
 		aboutPage = frontPage.aboutRedirect();
 	}
 	
-	@Test(priority=9)
+	@Test(priority=10)
 	public void pricingRedirectTest() {
 		signupPage = frontPage.sideSignUpRedirect();
 	}

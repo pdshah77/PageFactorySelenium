@@ -20,7 +20,7 @@ public class FrontPage extends TestBase{
 	@FindBy(xpath="//a[contains(text(),'Sign Up')]")
 	WebElement sidesignUpBtn;
 	
-	@FindBy(linkText = "About")
+	@FindBy(xpath = "//a[text()='About']")
 	WebElement aboutBtn;
 	
 	@FindBy(linkText = "Pricing")
@@ -36,8 +36,13 @@ public class FrontPage extends TestBase{
 		return driver.getTitle();
 	}
 	
-	public boolean validateTagLine() {
+	public boolean validateTagLineDisplay() {
 		return logoTagLine.isDisplayed();
+	}
+	
+	public String validateTagLine() {
+		return logoTagLine.getText();
+		
 	}
 	
 	public boolean validateLoginButton() {
